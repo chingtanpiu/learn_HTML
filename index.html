@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- base标签指定了页面上src、action属性所指定的路径的默认前缀;如果添加target="_blank"，则所有的网页都会在新标签页打开 -->>
+    <base href="resource/">
+    <!-- 当样式需要应用于【很多】html文档时，外部样式表将是理想的选择，这样能通过改变一个文件来改变整个站点的外观。每个html页面使用 <link> 标签链接到样式表 -->
+    <!-- 外部样式一定要放在内部样式前面 -->
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <!-- 内部样式表(写在head标签里的style)引用CSS,当【单个的】html文件需要特别样式时，就可以使用内部样式表。h1,p,img{width:800px;}把h1、段落、图片(img)都规范在800像素的宽度内 -->
+    <!-- 内部样式表的应用优先级高于内联样式 -->
+    <style type="text/css"> 
+        h1,p{width:800px;}
+    </style>
+    <meta charset="utf-8">
+    <meta  http-equiv="refresh" content="30">
+<title>这是标签页标题</title>
+</head>
+<!-- 在HTML元素中使用"style" 属性——内联样式，其优先级高于内部样式 -->
+<body style="background-color:rgb(233, 248, 197);"> 
+    <h1 style="font-family:verdana;text-align:center;"">一级居中verdana字体标题“爱在西元前”</h1>
+    <img src = "Flag_of_Tibet.png" alt="雪山狮子旗"/>
+    <!-- 标签hr创建一个水平线 -->
+    <hr>
+    <!-- span标签提供了一种将文本的一部分或者文档的一部分独立出来的方式，下例中使用 span对文本中的一部分进行着色 -->
+    <p style="font-family:arial;color:red;font-size:20px;">第一个段落:<br>爱在西元前<br>古巴比伦王颁布了汉谟拉比法典<br>刻在<span style="color:black;font-weight:bold">黑色</span>的玄武岩上<br>距今已三千七百多年<br>
+        <!-- 使用图片链接 -->>
+        <a href="https://open.spotify.com/collection/playlists"><img border="0" src="Spotify.png" alt="HTML教程" width="80" height="80"></a>
+    </p>
+
+    <h2>这里一个二级标题</h2>
+    <video width="320" height="240" controls>
+        <source src="drinking.mp4" type="video/mp4">
+        <source src="drinking.ogg" type="video/ogg">
+    </video>
+    <hr>
+    <!-- 在HTML元素中使用"style" 属性——内联样式 -->>
+    <p style="color:blue;margin-left:20px;">段落文本的行数取决于浏览器窗口的大小和br标签，p标签文本中的空格和换行不影响行数</p>
+    <!-- 下面的链接文本"浏览一个视频"不一定是文本，也可以是图片或其他HTML元素 -->
+    <!-- 将target属性设置为 "_blank", 链接将在新窗口打开。不然默认在当前页面打开 -->
+    <a href="https://www.runoob.com/try/demo_source/movie.mp4" target="_blank">观看一个视频</a>
+
+    <!-- div标签定义了文档的分隔区块，常用于组合块级元素，以便通过 CSS 来对这些元素进行格式化 -->
+    <div style="color:#FF4500">
+        <h1>这又一个一级标题</h1>
+        <font size="6">这是6号字体<br>爱在西元前~~ oh~ 爱在西元前~~</font>
+    </div>
+    <br>
+
+    <h1>专辑表(水平)</h1>
+    <caption>2004年金曲奖获奖</caption>
+    <!-- border属性显示一个代边框的表格 -->
+    <table border="1">
+        <!-- <th>为标题，<tr>代表行，<td>代表列/单元格 -->
+        <tr>
+            <th>奖项名</th>
+            <th>获奖人</th>
+            <th>专辑</th>
+        </tr>
+        <tr>
+            <td>最佳专辑制作人</td>
+            <td>王力宏</td>
+            <td>不可思议</td>
+        </tr>
+        <tr>
+            <td>最佳流行专辑</td>
+            <td><span style="color:rgb(97, 196, 5);">周杰伦</span></td>
+            <td>叶惠美</td>
+        </tr>
+    </table>
+    <hr>
+
+
+    <h1>专辑表(垂直)</h1>
+    <caption>2004年金曲奖获奖</caption>
+    <!-- border属性显示一个代边框的表格 -->
+    <table border="1" width="500px" height="300px">
+        <!-- <th>为标题，<tr>代表行，<td>代表列/单元格 -->
+        <!-- <td></td>中可以再套表格table -->>
+        <tr>
+            <th>奖项名</th>
+            <td>最佳专辑制作人</td>
+            <td>最佳流行专辑</td>
+            
+            
+        </tr>
+        <tr align="center">
+            <th>获奖人</th>
+            <td>王力宏</td>
+            <td>周杰伦</td>
+        </tr>
+        <tr>
+            <th>专辑</th>
+            <td>不可思议</td>
+            <td>叶惠美</td>
+        </tr>
+    </table>
+    <hr>
+
+
+    <script>
+        document.write("scrpit标签常用于加载javaScrpits")
+    </script>
+
+    <h1>未排序列表</h1>
+    <ul>
+        <li>也先汗</li>
+        <li>达延汗</li>
+        <li>俺答汗</li>
+        <li>林丹汗</li>
+    </ul>
+    <h1>数字列表</h1>
+    <ol>
+        <li>也先汗</li>
+        <li>达延汗</li>
+        <ul>
+            <li>俺答汗</li>
+            <li>林丹汗</li>
+        </ul>
+    </ol>
+    <ol start="50">
+        <li>博格达车臣汗</li>
+    </ol>
+
+    <!-- action属性会对接收到的用户输入数据进行相关的处理 -->
+    <form action="demo-form.php" method="get">
+        <!-- 字母、数字等内容属于文本域text -->
+        <input type="text"><br>
+        <!--  radio定义了表单的单选框选项-->
+        <input type="radio" name="sex" value="Han People">汉族<br>
+        <input type="radio" name="sex" value="other">少数民族<hr>
+        <!-- checkbox定义了复选框 -->
+        <input type="checkbox" name="identity[]" value="Chinese Citizen">中国公民<br>
+        <input type="checkbox" name="identity[]" value="Han People">汉族<hr>
+        <input type="submit" value="提交">
+    </form>
+
+    <form action="demo-form.php" method="get">
+        <!-- action属性标识提交数据的地址 -->
+        username: <input type="text" name="username"><br>
+        <!-- 密码字段——由password标识，中的字符是隐藏的(显示为星号或圆圈) -->
+        password: <input type="password" name="password">
+        <input type="submit" value="提交">
+    </form>
+
+
+
+
+    <script>
+        function myFunction(){
+            document.getElementById("demo").innerHTML="Hello World";
+        }
+    </script>
+
+    <p>单击按钮触发函数。</p>
+    <button onclick="myFunction()">点我</button>
+        
+</body>
+</html>

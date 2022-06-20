@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- base标签指定了页面上src、action属性所指定的路径的默认前缀;如果添加target="_blank"，则所有的网页都会在新标签页打开 -->>
+    <base href="resource/">
+
+
+    <!-- 内部样式(写在head标签里的style)引用CSS,当单个文件需要特别样式时，就可以使用内部样式表。h1,p,img{width:800px;}把h1、段落、图片(img)都规范在800像素的宽度内 -->
+    <!-- 内部样式的应用优先级高于内联样式 -->
+    <style type="text/css"> 
+        /*
+        link、visited、hover、active顺序不能变
+        link设置a对象在未被访问前的样式表属性
+        visited设置a对象在其链接地址已被访问过时的样式表属性
+        hover设置对象在其鼠标悬停时的样式表属性
+        active设置对象在被鼠标点击与释放之间的样式表属性
+        */
+        boby,h1,p{width:800px;}
+        body {background-color:tan;}
+        h1   {color:maroon;font-size:20pt;}
+        hr   {color:navy;}
+        p    {font-size:11pt;margin-left:15px;}
+        a:link    {color:blue;}
+        a:visited {color:purple;}
+        a:hover   {color:yellow;background-color:#f394b4;}
+        a:active  {color:green;}
+    </style>
+
+
+    <style>
+        /*css的注释。下面示范用id选择器为标有特定id的HTML元素指定特定的样式*/
+        #para_1
+        {text-align:center;color:red;}
+    </style>
+
+
+    <style>
+        /*通过class选择器为被标识为同个类的多个不限种类HTML元素指定特定的样式*/
+        .center{text-align:center;}
+    </style>
+    <style>
+        /*通过class选择器为被标识为同个类的多个特定种类的HTML元素指定特有样式，如下面，为所有使用了class="center"的h1元素的文本居中*/
+        /*优先级高于上面的不限元素种类的类选择器样式*/
+        h1.center{text-align:right;}
+    </style>
+    
+
+    <meta charset="utf-8">
+    <!-- Refresh document every 2 seconds。content属性有个url可选字段，用來設定幾秒鐘後跳轉 (redirect) 到某一個URL -->
+    <meta  http-equiv="refresh" content="2">
+<title>标签页标题</title>
+</head>
+
+<body>
+    <h1>第一个标题</h1>
+    <hr>
+
+    <p>你可以看到这个段落是被设定的CSS渲染的，注意左边距有15像素。</p>
+    <p><a href="http://www.runoob.com" target="_blank">这是一个链接，写在一个段落中，所以也有左15像素的边距</a></p>
+    <a href="http://www.runoob.com" target="_blank">这是一个链接，没写在段落中</a>
+    <p id="para_1">这个段落使用的是专门为该段落元素设定的样式。id选择器的样式中字体、颜色、字号等优先级高于全局样式的，但不意味着全局样式完全失效，对于那些id选择器样式中未设置而全局样式中设置了的属性，全局样式还是会生效的</p>
+    <hr>
+    <h1 class="center">center类选择器的标题样式。center样式其实只设置了文本居中，但全局样式对字号、字色的设定还是生效着的</h1>
+    <p class="center">center类选择器的段落样式。center样式其实只设置了文本居中，但全局样式对字号、字色的设定还是生效着的</p>
+</body>
+
+</html>

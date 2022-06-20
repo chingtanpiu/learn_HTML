@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+ </head>
+ <body>
+  <!-- 输入关键字 -->
+  <!-- oninput可以实时监听文本框的输入变化,实时触发指定的事件如query() -->>
+  <input type="text" id="username" oninput="query()" />
+  <!-- 定义一个唯一id为box区块，后面列表的结果显示在这个的div元素里 -->
+  <div id="box"></div>
+  <script>
+   //定义一个数组变量。心得：写在脚本外面不是一个好办法，因为在脚本外面用<ul>、<li>标签编写列表简单，但是不方便JS读取。
+   var obj = [{
+    "name": "周冬雨",
+    "age": 19,
+    "sex": 0
+   }, {
+    "name": "周杰伦",
+    "age": 19,
+    "sex": 0
+   }, {
+    "name": "周润发",
+    "age": 19,
+    "sex": 0
+   }, {
+    "name": "周发发",
+    "age": 19,
+    "sex": 0
+   },{
+    "name": "温兆伦",
+    "age": 20,
+    "sex": 0
+   },{
+    "name": "黄国伦",
+    "age": 20,
+    "sex": 0
+   },{
+    "name": "黄立行",
+    "age": 22,
+    "sex": 0
+   }];
+   //初始化渲染(即显示全部列表的起始页面)
+   init();
+   //实时获取输入的关键字
+   function query() {
+    //获取输入框元素
+    var username = document.getElementById("username");
+    //获取唯一id为box的元素
+    var box_value = document.getElementById("box");
+
+    
+    //输入值不为空
+    if(username.value != ""){
+     //清空
+     box_value.innerHTML = '';
+     //遍历数组对象。注意这里不像python，这里的i是obj的元素索引值(0123)而不是元素本身,obj[i]是个object(不明)，如果想输出obj[i]的元素，需借助JS的JSON.stringify()方法
+     for (var i in obj) {
+      if (obj[i].name.indexOf(username.value) != -1) {
+       box_value.innerHTML += '<li>'+JSON.stringify(obj[i])+'--'+i+'</li>'; //转化、拼接字符串并传给id为box的元素(先前定义的div)
+      }
+     }
+    }else{
+     box_value.innerHTML = '';
+     //输入值为空时设置候选项为空
+     init();
+    }
+   }
+   function init(){
+    for (var i in obj) {
+     box_value.innerHTML += '<li>'+JSON.stringify(obj[i])+'--'+i+'</li>';
+    }
+   }
+  </script>
+ </body>
+</html>
